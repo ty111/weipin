@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="frame/bootstrap/css/bootstrap.min.css">
+    <script src="frame/angular/angular.min.js"></script>
+    <script src="frame/angular/angular-ui-router.min.js"></script>
+    <script src="frame/jquery/jquery-3.1.0.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/headfbgf.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/css01.css">
+    <script>
+        window.onload=function(){
+             var oLi1=document.getElementById("box1");
+             var oDiv1=document.getElementById("box2");
+             var oDiv2=document.getElementById('m1');
+            var oDiv3=document.getElementById('h1');
+            var oUl=oDiv3.getElementsByTagName('ul')[0];
+            var aLi=oUl.getElementsByTagName('li');
+            var aDiv1=oUl.getElementsByClassName('main-4-1');
+            onmouseover1(oLi1,oDiv1);
+            onmouseover2(aLi,aDiv1);
+         };
+         $(function(){
+             var w1=$('#m2').width();
+             var h1=$('#m2').height();
+             $("#m2").mouseover(function(){
+                 $('#m2').animate({width:(w1+15)+'px',height:(h1+15)+'px',left:"-30px",top:"-30px"},1000);
+             });
+             $("#m2").mouseout(function(){
+                 $('#m2').animate({width:w1+'px',height:h1+'px',left:"0px",top:"0px"},1000);
+             });
+             $(window).scroll(function(){
+                 var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                 if(scrollTop>200)
+                 {
+                     $('nav').addClass(" navbar-fixed-top");
+                 }
+                 else{
+                     $('nav').removeClass("navbar-fixed-top");
+                 }
+             });
+             $(window).scroll(function(){
+                 var scrollTop1=document.documentElement.scrollTop||document.body.scrollTop;
+                 if(scrollTop1>600)
+                 {
+
+                     $('.main-left-1').css("display","block");
+
+                 }
+                 else{
+
+                     $('.main-left-1').css("display","none");
+                 }
+             })
+
+         });
+    </script>
+</head>
+<body>
+     <div class="container" style="margin-left: -15px;" ng-controller="cartController">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="head-top">
+                      <div class="head-top-1"><span></span></div>
+                  </div>
+                  <div class="head-main">
+                      <img class="potision1" src="images/head-top-1.gif">
+                      <img src="images/head-top-2.png">
+                      <img src="images/head-top-3.png">
+                      <img src="images/head-top-4.png">
+                      <span>&nbsp | &nbsp</span>
+                      <img src="images/head-top-5.PNG">
+                  </div>
+                  <nav class="navbar" role="navigation">
+                      <div class="head-main-1">
+                          <ul class="nav navbar-nav">
+                              <li><a href="" class="head-color1">首页</a></li>
+                              <li><a href="">唯品国际</a></li>
+                              <li><a href="">母婴</a></li>
+                              <li><a href="">家居家电</a></li>
+                              <li><a href="">男士</a></li>
+                              <li><a href="">春季美妆节</a></li>
+                              <li><a href="">生活</a></li>
+                              <li><a href="">金融</a></li>
+                              <li id="box1"><a href="">更多</a>
+                                  <div class="head-main-2" id="box2">
+                                      <div>
+                                          <a><img src="images/head-top-6.jpg"></a>
+                                      </div>
+                                      <div>
+                                          <a><img src="images/head-top-7.jpg"></a>
+                                      </div>
+                                      <div>
+                                          <a><img src="images/head-top-8.jpg"></a>
+                                      </div>
+                                      <div>
+                                          <a><img src="images/head-top-9.jpg"></a>
+                                      </div>
+                                  </div>
+
+                              </li>
+                              <li style="margin-left: 200px;"><a href="">分类</a></li>
+                              <li><a href="">预告</a></li>
+                          </ul>
+
+                      </div>
+                  </nav>
+                  <div class="head-bottom">
+                     <div class="head-bottom-1">
+                         <img src="images/head-bottom-2.jpg">
+                     </div>
+                  </div>
+                  <img src="images/head-bottom-4.jpg">
+                  <div class="head-boottom-2">
+                      <img src="images/head-bottom-5.jpg" width="330px" height="180px"><img src="images/head-bottom-6.jpg" width="330px" height="180px"><img src="images/head-bottom-7.jpg" width="330px" height="180px">
+                  </div>
+                  <hr color="#cccccc" style="height: 1px;width:20%; margin-left: 16%; margin-top: 150px;" >
+                  <a id="p11"><span class="head-font-1">新特卖</span><span class="head-font-2">每日早10晚8上新</span></a>
+                  <hr color="#cccccc" style="height: 1px;width:20%;margin-left: 84%;margin-top: -20px;">
+                  <span class="head-font-3">TODAY'S DEALS BRAND</span>
+                  <div class="main-1" id="h1">
+                       <ul>
+                           <li><a href=""><img class="ho1" src="images/main-top-1.jpg" alt=""/></a></li>
+                           <div class="main-2" style="left:3%;top:210px;"></div>
+                           <div class="main-3" style="top:-100px;left: 11%;">
+                              <img src="images/main-top-main-1.png" width="100px" height="50px">
+                               <p>nike潮流新生</p>
+                           </div>
+                           <div class="main-4-1">
+                               <div class="main-4-2">
+                                   <img src="images/main-t-1.jpg" height="150px">
+                                   <span>￥499</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                               </div>
+                               <div class="main-4-2">
+                                   <img src="images/main-t-2.jpg" height="150px">
+                                   <span>￥234</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="" style="border-radius: 20px;" onmouseover="function mouse12(){
+                                    $(this).css('background','#C51D4F') }"
+                                      >收藏品牌</a>
+                               </div>
+
+                               <div class="main-4-2">
+                                   <img src="images/main-t-3.jpg" height="150px">
+                                   <span>￥345</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="">进入专场</a>
+                               </div>
+
+
+
+                           </div>
+                           <li><a href=""><img class="position2 ho1"  src="images/main-top-2.jpg" alt=""/></a></li>
+                           <div class="main-2" style="left:49%; top:-100px;"></div>
+                           <div class="main-3" style="top:-300px;left: 60%;">
+                               <img src="images/main-top-main-1.png" width="100px" height="50px">
+                               <p>nike百搭型格</p>
+                           </div>
+                           <div class="main-4-1 " style="left:46%; top:-310px;">
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-1.jpg" height="150px">
+                                   <span>￥499</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                               </div>
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-2.jpg" height="150px">
+                                   <span>￥234</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="" style="border-radius: 20px">收藏品牌</a>
+                               </div>
+
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-3.jpg" height="150px">
+                                   <span>￥345</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="">进入专场</a>
+                               </div>
+                           </div>
+                           <li><a href=""><img class="position3 ho1" src="images/main-top-3.jpg" alt=""/></a></li>
+                           <div class="main-2" style="left:3%;top:-80px;"></div>
+                           <div class="main-3" style="top:-280px;left: 11%;">
+                               <img src="images/main-top-main-1.png" width="100px" height="50px">
+                               <p>nike百搭型格</p>
+                           </div>
+                           <div class="main-4-1"  style=" top:-290px;">
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-1.jpg" height="150px">
+                                   <span>￥499</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                               </div>
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-2.jpg" height="150px">
+                                   <span>￥234</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="" style="border-radius: 20px">收藏品牌</a>
+                               </div>
+
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-3.jpg" height="150px">
+                                   <span>￥345</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="">进入专场</a>
+                               </div>
+                           </div>
+                           <li><a href=""><img class="position4 ho1" src="images/main-top-4.jpg" alt=""/></a></li>
+                           <div class="main-2" style="left:49%;top:-390px;"></div>
+                           <div class="main-3" style="top:-590px;left: 60%;">
+                               <img src="images/main-top-main-1.png" width="100px" height="50px">
+                               <p>nike百搭型格</p>
+                           </div>
+                           <div class="main-4-1"  style="left:46%; top:-600px;">
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-1.jpg" height="150px">
+                                   <span>￥499</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                               </div>
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-2.jpg" height="150px">
+                                   <span>￥234</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="" style="border-radius: 20px">收藏品牌</a>
+                               </div>
+
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-3.jpg" height="150px">
+                                   <span>￥345</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="">进入专场</a>
+                               </div>
+                           </div>
+                           <li><a href=""><img class="position5 ho1" src="images/main-top-5.jpg" alt=""/></a></li>
+                           <div class="main-2" style="left:3%;top:-370px;"></div>
+                           <div class="main-3" style="top:-570px;left: 11%;">
+                               <img src="images/main-top-main-1.png" width="100px" height="50px">
+                               <p>nike百搭型格</p>
+                           </div>
+                           <div class="main-4-1"  style="top:-580px;">
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-1.jpg" height="150px">
+                                   <span>￥499</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                               </div>
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-2.jpg" height="150px">
+                                   <span>￥234</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="" style="border-radius: 20px">收藏品牌</a>
+                               </div>
+
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-3.jpg" height="150px">
+                                   <span>￥345</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="">进入专场</a>
+                               </div>
+                           </div>
+                           <li><a href=""><img class="position6 ho1" src="images/main-top-6.jpg" alt=""/></a></li>
+                           <div class="main-2" style="left:49%;top:-680px;"></div>
+                           <div class="main-3" style="top:-880px;left: 60%;">
+                               <img src="images/main-top-main-1.png" width="100px" height="50px">
+                               <p>nike百搭型格</p>
+                           </div>
+                           <div class="main-4-1"  style="left:46%;top:-890px;">
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-1.jpg" height="150px">
+                                   <span>￥499</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                               </div>
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-2.jpg" height="150px">
+                                   <span>￥234</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="" style="border-radius: 20px">收藏品牌</a>
+                               </div>
+
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-3.jpg" height="150px">
+                                   <span>￥345</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="">进入专场</a>
+                               </div>
+                           </div>
+                           <li><a href=""><img class="position7 ho1" src="images/main-top-7.jpg" alt=""/></a></li>
+                           <div class="main-2" style="left:3%;top:-660px;"></div>
+                           <div class="main-3" style="top:-860px;left: 11%;">
+                               <img src="images/main-top-main-1.png" width="100px" height="50px">
+                               <p>nike百搭型格</p>
+                           </div>
+                           <div class="main-4-1"  style="top:-870px;">
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-1.jpg" height="150px">
+                                   <span>￥499</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                               </div>
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-2.jpg" height="150px">
+                                   <span>￥234</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="" style="border-radius: 20px">收藏品牌</a>
+                               </div>
+
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-3.jpg" height="150px">
+                                   <span>￥345</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="">进入专场</a>
+                               </div>
+                           </div>
+                           <li><a href=""><img class="position8 ho1" src="images/main-top-8.jpg" alt=""/></a></li>
+                           <div class="main-2" style="left:49%;top:-970px;"></div>
+                           <div class="main-3" style="top:-1170px;left: 60%;">
+                               <img src="images/main-top-main-1.png" width="100px" height="50px">
+                               <p>nike百搭型格</p>
+                           </div>
+                           <div class="main-4-1"  style="left:46%;top:-1180px;">
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-1.jpg" height="150px">
+                                   <span>￥499</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                               </div>
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-2.jpg" height="150px">
+                                   <span>￥234</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="" style="border-radius: 20px">收藏品牌</a>
+                               </div>
+
+                               <div class="main-4-2 main-po-4">
+                                   <img src="images/main-t-3.jpg" height="150px">
+                                   <span>￥345</span>
+                                   <hr color="#000000" style="height: 1px;width:120%;" />
+                                   <a href="">进入专场</a>
+                               </div>
+                           </div>
+                       </ul>
+                  </div>
+                  <div class="main-left-1">
+                      <ul>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a id=" #p11">精选</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a id=" #C2">女装</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C3">鞋包</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C4">男士</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C5">运动</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C6">饰品</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C7">美妆</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C8">母婴</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C9">居家</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C10">国际</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C11">生活</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                          <li><a href=" #C12">预告</a></li>
+                          <hr color="#cccccc" width="80%" height="1px" style="margin-left: 10%;margin-top: -2px;"/>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: -1300px">
+                 <div class="main-5">
+                     <a id="C2"><img src="images/main-z-1.png"></a>
+                     <ul id="ul1" ng-repeat="item in menu">
+                         <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat" ng-mouseover="mouse1($index)" ng-mouseleave="mouse2($index)">
+                             <div class="main-6" style="display: {{item.display}}"></div>
+                             <p class="main-7">{{item.name}}</p>
+                             <p class="main-9"><a id="t2" href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                             <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                         </li>
+
+                     </ul>
+
+                 </div>
+
+
+             </div>
+         </div>
+         <div class="main-10" id="m1">
+             <div class="main-10-1">
+                 <img id="m2" src="images/fashion_peopel.jpg">
+             </div>
+
+         </div>
+         <div class="main-11"></div>
+         <p class="main-12"><span class="main-font-1">爱丽奢<br/>VLPLUX</span><span class="main-font-2">轻奢大牌 时尚臻品</span></p>
+         <div class="main-13"><span class="main-font-3">进入频道></span></div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C3"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C4"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C5"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C6"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C7"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C8"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C9"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C10"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C11"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row" ng-controller="cartController">
+             <div class="col-md-12" style="margin-top: 100px">
+                 <div class="m3">
+                     <div class="main-5">
+                         <a id="C12"><img src="images/shoe.png"></a>
+                         <ul ng-repeat="item in menu2">
+                             <li class="t1" style="background-image: url('{{item.picture}}');background-repeat: no-repeat;" ng-mouseover="mouse3($index)" ng-mouseleave="mouse4($index)">
+                                 <!--<div class="main-6" style="display: {{item.display}}"></div>-->
+                                 <p class="main-7">&nbsp;</p>
+                                 <p class="main-9"><a  href="" style="opacity: {{item.opacity}}">收藏品牌</a></p>
+                                 <p class="main-8"><span class="main-color-1">{{item.price1}}</span><span>{{item.price2}}</span><span>&nbsp;</span><span>{{item.price3}}</span><span class="main-po-3">{{item.time}}</span></p>
+                             </li>
+
+                         </ul>
+
+                     </div>
+                 </div>
+
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-12">
+
+             </div>
+         </div>
+     </div>
+</body>
+</html>

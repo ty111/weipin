@@ -1,0 +1,28 @@
+/**
+ * Created by asus-pc on 2017/2/26.
+ */
+angular.module('cartCtrlModel',['serviceModel'])
+    .controller('cartController',function($scope,dataService1,dataService2){
+        $scope.menu=dataService1;
+        $scope.menu2=dataService2;
+        $scope.mouse1=function(index){
+            angular.forEach($scope.menu,function(item){
+                $scope.menu[index].opacity=1;
+            });
+        };
+        $scope.mouse2=function(index){
+            angular.forEach($scope.menu,function(item){
+                $scope.menu[index].opacity=0;
+            });
+        };
+        $scope.mouse3=function(index){
+            angular.forEach($scope.menu2,function(item){
+                $scope.menu2[index].opacity=1;
+            });
+        };
+        $scope.mouse4=function(index){
+            angular.forEach($scope.menu2,function(item){
+                $scope.menu2[index].opacity=0;
+            });
+        };
+    });
